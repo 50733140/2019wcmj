@@ -455,10 +455,8 @@ function myFunction() {
 function myFunction() {
   document.getElementById("demo").innerHTML = Math.floor(Math.random()*50+1);
 }
-// ]]></script><h1>期中自評影片</h1>
-<p>利用在影片按右鍵後選擇複製影片嵌入碼 複製貼上即可</p>
-<p><iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen" frameborder="0" height="693" src="https://www.youtube.com/embed/4eP0k16gGIs" width="1280"></iframe></p>
-<h1>期末報告說明</h1>
+<<<<<<< HEAD
+// ]]></script><h1>期末報告說明</h1>
 <h2>網路連線設定</h2>
 <p><span>了解機械設計系電腦輔助設計室電腦的網路設定, 其中包括 IPv4 網路與 IPv6 網路設定.</span><br/><br/><span>正常情況下, 電腦輔助設計室中的 64 台電腦透過 IPv4 協定下的 DHCP 與 NAT 上網, 各電腦以 DHCP client 取得 192.168.1.* 的網路位址, 然後以 NAT 的一組外部 IP 上網, 通常必須設定 Proxy Server 為 http://proxy.kmol.info:3128 後上網會比較順暢, 但若 8 台 Proxy Servers 無法正常運作時, 則取消 Proxy Server 的設定.</span><br/><br/><span>瀏覽器代理主機設定</span><br/><br/><span>了解如何設定 Google Chrome 與 Firefox 瀏覽器的代理主機設定.</span><br/><br/><span>申請 Github 帳號</span><br/><br/><span>利用 Gmail 帳號申請 Github 帳號, 申請後利用電子郵箱收信進行確認後, 就可以在 Github 上建立倉儲.</span></p>
 <h2>配置可攜程式環境</h2>
@@ -487,3 +485,51 @@ function myFunction() {
 <p><span>pip install flask bs4 lxml</span></p>
 <p><span>表示要利用 pip 安裝 flask, bs4 與 lxml 模組.</span></p>
 <h3>bs4應用</h3>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">import bs4
+ 
+filename = "index.html"
+with open(filename, "r", encoding="utf-8") as f:
+    file_content = f.read()
+ 
+soup = bs4.BeautifulSoup(file_content, "lxml")
+ 
+new_content = soup.prettify()
+print(new_content)
+ 
+with open(filename, "w", encoding="utf-8") as f:
+    f.write(new_content)
+ 
+#print(soup.prettify())
+</pre>
+<p></p>
+<h3>套用模板一</h3>
+<p><a href="https://themewagon.com/themes/free-html5-bootstrap-4-business-website-template-chimper/">https://themewagon.com/themes/free-html5-bootstrap-4-business-website-template-chimper/</a></p>
+<p>採用程式庫:</p>
+<p><a href="https://github.com/mattboldt/typed.js">https://github.com/mattboldt/typed.js</a> </p>
+<p><a href="https://github.com/michalsnik/aos">https://github.com/michalsnik/aos</a></p>
+<p><a href="https://github.com/eternicode/bootstrap-datepicker">https://github.com/eternicode/bootstrap-datepicker</a> </p>
+<p><a href="https://github.com/dimsemenov/Magnific-Popup">https://github.com/dimsemenov/Magnific-Popup</a></p>
+<p><a href="http://hilios.github.io/jQuery.countdown/">http://hilios.github.io/jQuery.countdown/</a></p>
+<p><a href="https://github.com/markdalgleish/stellar.js/">https://github.com/markdalgleish/stellar.js/</a></p>
+<p><a href="https://github.com/OwlCarousel2/OwlCarousel2">https://github.com/OwlCarousel2/OwlCarousel2</a></p>
+<p><a href="https://github.com/twbs/bootstrap/releases/tag/v4.1.3">https://github.com/twbs/bootstrap/releases/tag/v4.1.3</a></p>
+<p><a href="https://github.com/FezVrasta/popper.js/">https://github.com/FezVrasta/popper.js/</a></p>
+<p><a href="https://github.com/jquery/jquery-ui/releases/tag/1.12.1">https://github.com/jquery/jquery-ui/releases/tag/1.12.1</a></p>
+<p><a href="https://github.com/jquery/jquery-migrate/releases/tag/3.0.1">https://github.com/jquery/jquery-migrate/releases/tag/3.0.1</a></p>
+<p><a href="https://github.com/jquery/jquery/releases/tag/3.3.1">https://github.com/jquery/jquery/releases/tag/3.3.1</a></p>
+<p>動態 CMSimfly 仍維持原樣, 但是靜態網頁可以自由選擇頁面模板</p>
+<h4>Github Pages:</h4>
+<p><a href="http://cpgx.kmol.info/chimper/">http://cpgx.kmol.info/chimper/</a></p>
+<h2>Virtual Host</h2>
+<p>以下內容主要目的在培養能夠建立 backend 網際可程式化機械設計合成系統的開發人員, 網際前端與後端的開發流程, 可以參考:</p>
+<p><a href="https://github.com/kamranahmedse/developer-roadmap">https://github.com/kamranahmedse/developer-roadmap</a><span> (</span><a href="https://medium.com/tech-tajawal/modern-frontend-developer-in-2018-4c2072fa2b9c">blog</a><span>)</span></p>
+<p><span>前端開發者必須讓網頁能在各種大小與規格的瀏覽裝置中, 正確且友善地顯示內容, 而後端開發者, 則專注於讓近端使用者能夠透過網際介面使用各種與機械設計流程相關的 CAD, CAE, CAM, PDM, 以及各種支援用的數位型錄等.</span></p>
+<p>參考 vdi:<br/><br/>位於雲端的<span> </span><a href="https://drive.google.com/file/d/1bSBdEPVn6IG22cVLpTbY97JY16vjlatz/view?usp=sharing">Ubuntu 18.04_201904.vdi</a><span> </span>(約 9 GB) - 已經配置 Fossil SCM: https 5443, Host-only: 192.168.56.2, https: 443 and 8843 for CMSimfly, Squid Proxy Server.<br/><br/>假如要利用 USB 隨身碟存放上述約 9 GB 的 Ubuntu 18.04 vdi 檔案, 必須將隨身碟格式化為 NTFS, 若採 Fat32 格式, 最大單一檔案必須小於 4 GB.<br/><br/>另外在近端有一類似的檔案, 可提供上課學員下載:<br/><br/><a href="http://wcmg1.kmol.info:88/ub1804_nox.vdi">http://wcmg1.kmol.info:88/ub1804_nox.vdi</a><span> </span>(僅限近端用戶使用 IPv6 協定者下載)</p>
+<p>Fossil SCM<br/><br/>如何利用 Fossil SCM, 在 Virtualbox 中的 Ubuntu 18.04-2 (8.5 GB) 建立類似 Github 的系統, 可以放入 CMSimfly 的靜態網頁<br/><br/>Ubuntu 18.04 (https://www.ubuntu.com/about/release-cycle), 配置網路連線, 然後架構 uwsgi 環境下的 CMSimfly 動態網站, 或建立 Fossil SCM 用來伺服管理 CMSimfly 下有版次管理的靜態網頁, 或利用 nginx 伺服無版次管理的 CMSimfly 靜態網頁.</p>
+=======
+// ]]&gt;
+<p></p><h1>期中自評影片</h1>
+<p><iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen" frameborder="0" height="693" src="https://www.youtube.com/embed/4eP0k16gGIs" width="1280"></iframe></p>
+<h1>game1</h1>
+<p><a href="https://50733140.github.io/2019wcmj/content/game.html">https://50733140.github.io/2019wcmj/content/game.html</a></p>
+<p></p>
