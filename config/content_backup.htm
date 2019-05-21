@@ -550,7 +550,7 @@ with open(filename, "w", encoding="utf-8") as f:
 <p></p>
 <h1>ROC flag</h1>
 <!-- 導入 Brython 標準程式庫 -->
-<script src="/get_page/static/brython.js"></script>
+<script src="/../static/brython.js"></script>
 <script src="/../static/brython_stdlib.js"></script>
 <p></p>
 <!-- 啟動 Brython -->
@@ -560,11 +560,23 @@ window.onload=function(){
 
 
 
-// 設定 data/py 為共用程式路徑
+
+
+
+
+
+
+
+
+
 
 
 
 brython({debug:1, pythonpath:['./../data/py']});
+
+
+
+
 
 
 
@@ -578,7 +590,15 @@ brython({debug:1, pythonpath:['./../data/py']});
 
 
 
+
+
+
+
 from browser import document as doc
+
+
+
+
 
 
 
@@ -590,7 +610,19 @@ import math
 
 
 
+
+
+
+
+
+
+
+
 # 準備繪圖畫布
+
+
+
+
 
 
 
@@ -598,7 +630,15 @@ canvas = doc["plotarea"]
 
 
 
+
+
+
+
 ctx = canvas.getContext("2d")
+
+
+
+
 
 
 
@@ -606,7 +646,15 @@ ctx = canvas.getContext("2d")
 
 
 
+
+
+
+
 # ctx.setTransform(1, 0, 0, -1, 0, canvas.height)
+
+
+
+
 
 
 
@@ -614,7 +662,15 @@ ctx = canvas.getContext("2d")
 
 
 
+
+
+
+
 flag_w = canvas.width
+
+
+
+
 
 
 
@@ -622,7 +678,15 @@ flag_h = canvas.height
 
 
 
+
+
+
+
 circle_x = flag_w/4
+
+
+
+
 
 
 
@@ -630,7 +694,15 @@ circle_y = flag_h/4
 
 
 
+
+
+
+
 # 先畫滿地紅
+
+
+
+
 
 
 
@@ -638,7 +710,15 @@ ctx.fillStyle='rgb(255, 0, 0)'
 
 
 
+
+
+
+
 ctx.fillRect(0,0,flag_w,flag_h)
+
+
+
+
 
 
 
@@ -646,7 +726,15 @@ ctx.fillRect(0,0,flag_w,flag_h)
 
 
 
+
+
+
+
 ctx.fillStyle='rgb(0, 0, 150)'
+
+
+
+
 
 
 
@@ -654,11 +742,23 @@ ctx.fillRect(0,0,flag_w/2,flag_h/2)
 
 
 
+
+
+
+
 # 畫十二道光芒白日
 
 
 
+
+
+
+
 ctx.beginPath()
+
+
+
+
 
 
 
@@ -666,7 +766,15 @@ star_radius = flag_w/8
 
 
 
+
+
+
+
 angle = 0
+
+
+
+
 
 
 
@@ -674,7 +782,15 @@ for i in range(24):
 
 
 
+
+
+
+
     angle += 5*math.pi*2/12
+
+
+
+
 
 
 
@@ -682,7 +798,15 @@ for i in range(24):
 
 
 
+
+
+
+
     toY = circle_y + math.sin(angle)*star_radius
+
+
+
+
 
 
 
@@ -690,7 +814,15 @@ for i in range(24):
 
 
 
+
+
+
+
     if (i):
+
+
+
+
 
 
 
@@ -698,7 +830,15 @@ for i in range(24):
 
 
 
+
+
+
+
     else:
+
+
+
+
 
 
 
@@ -706,7 +846,15 @@ for i in range(24):
 
 
 
+
+
+
+
 ctx.closePath()
+
+
+
+
 
 
 
@@ -714,11 +862,23 @@ ctx.closePath()
 
 
 
+
+
+
+
 ctx.fillStyle = '#fff'
 
 
 
+
+
+
+
 ctx.fill()
+
+
+
+
 
 
 
@@ -726,7 +886,15 @@ ctx.fill()
 
 
 
+
+
+
+
 ctx.beginPath()
+
+
+
+
 
 
 
@@ -734,7 +902,15 @@ ctx.arc(circle_x, circle_y, flag_w*17/240, 0, math.pi*2, True)
 
 
 
+
+
+
+
 ctx.closePath()
+
+
+
+
 
 
 
@@ -742,7 +918,15 @@ ctx.closePath()
 
 
 
+
+
+
+
 ctx.fillStyle = 'rgb(0, 0, 149)'
+
+
+
+
 
 
 
@@ -750,7 +934,15 @@ ctx.fill()
 
 
 
+
+
+
+
 # 白日:白心
+
+
+
+
 
 
 
@@ -758,7 +950,15 @@ ctx.beginPath()
 
 
 
+
+
+
+
 ctx.arc(circle_x, circle_y, flag_w/16, 0, math.pi*2, True)
+
+
+
+
 
 
 
@@ -766,11 +966,23 @@ ctx.closePath()
 
 
 
+
+
+
+
 # 填色設為白色
 
 
 
+
+
+
+
 ctx.fillStyle = '#fff'
+
+
+
+
 
 
 

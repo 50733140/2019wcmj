@@ -1697,10 +1697,14 @@ def saveConfig():
 def savePage():
     """save all pages function"""
     page_content = request.form['page_content']
-    # when element_format : "html", need to remove the annoying comment to prevent brython exec
     page_content = [w.replace('// <![CDATA[', '') for w in page_content]
     page_content = [w.replace('// ]]>', '') for w in page_content]
     # check if administrator
+    if not isAdmin():
+        return redirect("/login")
+    if page_content is None:
+        return error_log("no content to save!")
+    # 在插入新頁面資料前, 先複製 content.htm 一分到 content_backup.htm
     shutil.copy2(config_dir + "content.htm", config_dir + "content_backup.htm")
     # in Windows client operator, to avoid textarea add extra \n
     page_content = page_content.replace("\n","")
@@ -1996,13 +2000,15 @@ def sizeof_fmt(num):
 def ssavePage():
     """seperate save page function"""
     page_content = request.form['page_content']
-    # when element_format : "html", need to remove the annoying comment to prevent brython exec
     page_content = page_content.replace('// <![CDATA[', '')
     page_content = page_content.replace('// ]]>', '')
     page_order = request.form['page_order']
     if not isAdmin():
+        return redirect("/login")
+    if page_content is None:
+        return error_log("no content to save!")
     # 請注意, 若啟用 fullpage plugin 這裡的 page_content tinymce4 會自動加上 html 頭尾標註
-        page_content = page_content.replace("\n","")
+    page_content = page_content.replace("\n","")
     head, level, page = parse_content()
     original_head_title = head[int(page_order)]
     # 在插入新頁面資料前, 先複製 content.htm 一分到 content_backup.htm
