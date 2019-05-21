@@ -1,13 +1,56 @@
-<!doctype html>
-<html><head>
-<meta http-equiv="content-type" content="text/html;charset=utf-8">
-<title>CMSimfly</title> <link rel="stylesheet" type="text/css" href="./../static/cmsimply.css">
-<script src="tipuesearch_content.js"></script>
-<script src="./../static/jquery.js"></script>
-<link rel="stylesheet" href="./../static/tipuesearch/css/tipuesearch.css">
-<script src="./../static/tipuesearch/tipuesearch_set.js"></script>
-<script src="./../static/tipuesearch/tipuesearch.min.js"></script>
-
+<!DOCTYPE html><html>
+        <head>
+        <title>CMSimfly</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700,900" rel="stylesheet">
+        <link rel="stylesheet" href="./../static/chimper/fonts/icomoon/style.css">
+        <link rel="stylesheet" href="./../static/chimper/css/bootstrap.min.css">
+        <link rel="stylesheet" href="./../static/chimper/css/magnific-popup.css">
+        <link rel="stylesheet" href="./../static/chimper/css/jquery-ui.css">
+        <link rel="stylesheet" href="./../static/chimper/css/owl.carousel.min.css">
+        <link rel="stylesheet" href="./../static/chimper/css/owl.theme.default.min.css">
+        <link rel="stylesheet" href="./../static/chimper/css/bootstrap-datepicker.css">
+        <link rel="stylesheet" href="./../static/chimper/fonts/flaticon/font/flaticon.css">
+        <link rel="stylesheet" href="./../static/chimper/css/aos.css">
+        <link rel="stylesheet" href="./../static/chimper/css/style.css">
+        <link rel="shortcut icon" href="./../static/favicons.png">
+        
+        <style type='text/css'>
+            .site-section {
+            background-color: #FFFF;
+            padding: 40px 40px;
+            }
+            body > div > div.dropdown.open {
+                display: block;
+            }
+        </style>
+    
+        <!-- <script src="./../static/jquery.js"></script> -->
+        <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
+        <script src="../static/chimper/js/jquery-3.3.1.min.js"></script>
+        <link rel="stylesheet" href="./../static/tipuesearch/css/normalize.min.css">
+        <script src="./../static/tipuesearch/tipuesearch_set.js"></script>
+        <script src="tipuesearch_content.js"></script>
+        <link rel="stylesheet" href="./../static/tipuesearch/css/tipuesearch.css">
+        <script src="./../static/tipuesearch/tipuesearch.js"></script>
+        <script>
+            /* original tipuesearch
+            $(document).ready(function() {
+                 $('#tipue_search_input').tipuesearch();
+            });
+            */
+            // customed doSearch
+            function doSearch() {
+                $('#tipue_search_input').tipuesearch({
+                    newWindow: true, 
+                    minimumLength: 2,
+                    wholeWords: false, // for search 中文
+                });
+            }
+            $(document).ready(doSearch);
+        </script>
+        
 <script type="text/javascript" src="./../static/syntaxhighlighter/shCore.js"></script>
 <script type="text/javascript" src="./../static/syntaxhighlighter/shBrushJScript.js"></script>
 <script type="text/javascript" src="./../static/syntaxhighlighter/shBrushJava.js"></script>
@@ -55,31 +98,99 @@ init_mathjax();
 <script src="https://scrum-3.github.io/web/brython/brython_stdlib.js"></script>
 -->
 
-<script type="text/javascript">
-/*shorthand of $(document).ready(function(){};); */
-$(function(){
-    $("ul.topmenu> li:has(ul) > a").append('<div class="arrow-right"></div>');
-    $("ul.topmenu > li ul li:has(ul) > a").append('<div class="arrow-right"></div>');
-});
-function doSearch() {
-     $('#tipue_search_input').tipuesearch({
-        newWindow: true, minimumLength: 2
-     });
-}
-$(document).ready(doSearch);
-</script>
+</head>
+<body>
+<div class='container'><nav>
+        
+    <div class="site-wrap">
 
-</head><header><h1>CMSimfly - 動靜皆宜的簡潔網際內容管理</h1> <confmenu>
-<ul>
-<li><a href="index.html">Home</a></li>
-<li><a href="sitemap.html">Site Map</a></li>
-<li><a href="./../reveal/index.html">reveal</a></li>
-<li><a href="./../blog/index.html">blog</a></li>
+    <div class="site-mobile-menu">
+      <div class="site-mobile-menu-header">
+        <div class="site-mobile-menu-close mt-3">
+          <span class="icon-close2 js-menu-toggle"></span>
+        </div>
+      </div>
+      <div class="site-mobile-menu-body"></div>
+    </div>
+    
+            <header class="site-navbar py-4 bg-white" role="banner">
+              <div class="container-fluid">
+                <div class="row align-items-center">
+                <h1>CMSimfly - 動靜皆宜的簡潔網際內容管理</h1>
+                <div class="pl-4">
+                    <form>
+                    <input type="text" placeholder="Search" name="q" id="tipue_search_input" pattern=".{2,}" title="At least 2 characters" required>
+                    </form>
+                </div>
+                  <!-- <div class="col-11 col-xl-2">
+                    <h1 class="mb-0 site-logo"><a href="index.html" class="text-black h2 mb-0">CMSimfly - 動靜皆宜的簡潔網際內容管理</a></h1> 
+                  </div>
+                  -->
+                  <div class="col-12 col-md-10 d-none d-xl-block">
+                    <nav class="site-navigation position-relative text-right" role="navigation">
+    <ul class='site-menu js-clone-nav mr-auto d-none d-lg-block'>
+                        <li class="active has-children"><a href="index.html">Home</a>
+                        <ul class="dropdown">
+                            <li><a href="sitemap.html">Site Map</a></li>
+                            <li><a href="./../reveal/index.html">reveal</a></li>
+                            <li><a href="./../blog/index.html">blog</a></li>
+                        </ul>
+                      </li>
+                     <li class='has-children'><a href='CMSimfly.html'>CMSimfly</a><ul class='dropdown'><li><a href='目錄結構.html'>目錄結構</a><li><a href='頁面編輯.html'>頁面編輯</a><li class='has-children'><a href='插入程式碼.html'>插入程式碼</a><ul class='dropdown'><li><a href='Java 程式碼.html'>Java 程式碼</a><li><a href='Python 程式碼.html'>Python 程式碼</a><li><a href='C或C++程式碼.html'>C或C++程式碼</a><li><a href='Lua 程式碼.html'>Lua 程式碼</a><li><a href='Javascript 程式碼.html'>Javascript 程式碼</a><li><a href='Html 原始碼.html'>Html 原始碼</a></li></ul><li><a href='網際簡報.html'>網際簡報</a><li><a href='網誌編輯.html'>網誌編輯</a><li><a href='已知錯誤.html'>已知錯誤</a></li></ul><li><a href='產生亂數.html'>產生亂數</a><li class='has-children'><a href='期末報告說明.html'>期末報告說明</a><ul class='dropdown'><li><a href='網路連線設定.html'>網路連線設定</a><li><a href='配置可攜程式環境.html'>配置可攜程式環境</a><li><a href='倉儲改版.html'>倉儲改版</a><li><a href='靜態 CMSimfly.html'>靜態 CMSimfly</a><li class='has-children'><a href='Mobile 網站內容.html'>Mobile 網站內容</a><ul class='dropdown'><li><a href='CMSimfly 架構.html'>CMSimfly 架構</a><li><a href='bs4應用.html'>bs4應用</a><li><a href='套用模板一.html'>套用模板一</a></li></ul><li><a href='Virtual Host.html'>Virtual Host</a></li></ul><li><a href='期中自評影片.html'>期中自評影片</a><li><a href='捕魚達人.html'>捕魚達人</a><li><a href='ROC flag..html'>ROC flag.</a></li>
+                      </ul>
+                </nav>
+              </div>
+              <div class="d-inline-block d-xl-none ml-md-0 mr-auto py-3" style="position: relative; top: 3px;"><a href="#" class="site-menu-toggle js-menu-toggle text-black"><span class="icon-menu h3"></span></a></div>
+              </div>
 
-</ul>
-</confmenu></header>
-<div class='container'><nav><ul id='css3menu1' class='topmenu'><div class="tipue_search_group"><input style="width: 6vw;" type="text" name="q" id="tipue_search_input" pattern=".{2,}" title="Press enter key to search" required></div><li><a href='簡介.html'>簡介</a><li><a href='目錄結構.html'>目錄結構</a><li><a href='頁面編輯.html'>頁面編輯</a><li><a href='插入程式碼.html'>插入程式碼</a><ul><li><a href='Java 程式碼.html'>Java 程式碼</a><ul><li><a href='Python 程式碼.html'>Python 程式碼</a><li><a href='C或C++程式碼.html'>C或C++程式碼</a><li><a href='Lua 程式碼.html'>Lua 程式碼</a><li><a href='Javascript 程式碼.html'>Javascript 程式碼</a><li><a href='Html 原始碼.html'>Html 原始碼</a></li></li></ul></ul><li><a href='網際簡報.html'>網際簡報</a><li><a href='網誌編輯.html'>網誌編輯</a><li><a href='已知錯誤.html'>已知錯誤</a><li><a href='產生亂數.html'>產生亂數</a><li><a href='期末報告說明.html'>期末報告說明</a><ul><li><a href='網路連線設定.html'>網路連線設定</a><li><a href='配置可攜程式環境.html'>配置可攜程式環境</a><li><a href='倉儲改版.html'>倉儲改版</a><li><a href='靜態 CMSimfly.html'>靜態 CMSimfly</a><li><a href='Mobile 網站內容.html'>Mobile 網站內容</a><ul><li><a href='CMSimfly 架構.html'>CMSimfly 架構</a><li><a href='bs4應用.html'>bs4應用</a><li><a href='套用模板一.html'>套用模板一</a></li></ul><li><a href='Virtual Host.html'>Virtual Host</a></li></ul><li><a href='期中自評影片.html'>期中自評影片</a><li><a href='捕魚達人.html'>捕魚達人</a><li><a href='ROC flag.html'>ROC flag</a></li></ul></nav><section><div id="tipue_search_content">配置可攜程式環境 << <a href='配置可攜程式環境.html'>Previous</a> <a href='靜態 CMSimfly.html'>Next</a> >> 靜態 CMSimfly<br /><h1>倉儲改版</h1>
+            </div>
+          </div>
+          
+        </header>
+    <div id="tipue_search_content">配置可攜程式環境 << <a href='配置可攜程式環境.html'>Previous</a> <a href='靜態 CMSimfly.html'>Next</a> >> 靜態 CMSimfly<br /><h1>倉儲改版</h1>
 <p>建立 Git 倉儲, 並 clone 倉儲至近端工作後, 對遠端倉儲改版<br/><br/>可攜程式系統中已經內建 git, 可以在啟動 start.bat 後, 透過 path 的設定, 直接執行 git 指令.<br/><br/>建立 Git 倉儲, 共分為兩類, 一類是直接在 Github 網際介面下建立倉儲時, 要求建立 README.md 檔案, 之後可以直接在近端, 以 git clone 加上倉儲連線 URL, 將倉儲克隆一份到近端, 並以最新版本作為工作目錄, 使用者改版後, 可以直接透過 git add, commit 與 push 對遠端倉儲改版.<br/><br/>另一類則是故意在 Github 網際介面下建立倉儲時, 不要建立任何檔案, 而是在近端自行利用 git 指令建立倉儲架構, 新增內容後, 以 git remote add 設法在近端倉儲中納入 origin URL 後, 將近端倉儲版本新增提交推送到遠端.<br/><br/>git add<br/><br/>git add 可以用來新增一個檔案, 數個檔案, 或在之前提交後所新增的所有內容.<br/><br/>git add 在 GIT 架構下, 是對所新增或修改的內容拍快照:<br/><br/>git add . adds all modified and new (untracked) files in the current directory and all subdirectories to the staging area (a.k.a. the index), thus preparing them to be included in the next git commit . Any files matching the patterns in the .gitignore file will be ignored by git add<br/><br/>git commit<span> </span><br/><br/>git commit 執行之前, 必須使用 git config 建立臨時或永久的身分註記, 因為 GIT 在展開所有改版內容時, 必須明確登錄這些變更的作者與時間.<br/><br/>當使用者採用 git commit -m "改版說明訊息", 此次提交到 .git 目錄下的更動內容, 均會綁定使用者身分與改版所輸入的說明訊息.<br/><br/>git push<br/><br/>git push 在隨後沒有輸入遠端 URL 代號時, 表示要推送到 origin, 若透過 git remote add 設定其他代號與 URL 對應時, git push 加上代號, 就可以將此次的提交內容, 推送到指定的 URL 所在遠端倉儲.</p>
 <p><br/><br/><span>靜態 CMSimfly</span></p>
 <p>利用 CMSimfly (https://github.com/chiamingyen/cmsimfly) 內容, 建立自己的 Github Pages 網站<br/><br/>設法利用<span> </span><a href="http://mde.tw/wcm2019/content/%E5%AF%A6%E7%BF%92%E9%A0%85%E7%9B%AE%E4%B8%89.html">HTML5 CSS 與 Javascript</a>, 納入與機械設計相關的靜態網頁內容</p>
-<br />配置可攜程式環境 << <a href='配置可攜程式環境.html'>Previous</a> <a href='靜態 CMSimfly.html'>Next</a> >> 靜態 CMSimfly</div></section></div></body></html>
+<br />配置可攜程式環境 << <a href='配置可攜程式環境.html'>Previous</a> <a href='靜態 CMSimfly.html'>Next</a> >> 靜態 CMSimfly</div>
+        
+    <!-- footer -->
+      <div class="container">
+        <div class="row pt-3 mx-auto">
+            <p>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" >Colorlib</a>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            </p>
+        </div>
+      </div>
+    <!-- for footer -->
+    
+        </div> <!-- for site wrap -->
+            <!-- <script src="../static/chimper/js/jquery-3.3.1.min.js"></script> -->
+            <script src="../static/chimper/js/jquery-migrate-3.0.1.min.js"></script>
+            <script src="../static/chimper/js/jquery-ui.js"></script>
+            <script src="../static/chimper/js/popper.min.js"></script>
+            <script src="../static/chimper/js/bootstrap.min.js"></script>
+            <script src="../static/chimper/js/owl.carousel.min.js"></script>
+            <script src="../static/chimper/js/jquery.stellar.min.js"></script>
+            <script src="../static/chimper/js/jquery.countdown.min.js"></script>
+            <script src="../static/chimper/js/jquery.magnific-popup.min.js"></script>
+            <script src="../static/chimper/js/bootstrap-datepicker.min.js"></script>
+            <script src="../static/chimper/js/aos.js"></script>
+            <!--
+            <script src="../static/chimper/js/typed.js"></script>
+                    <script>
+                    var typed = new Typed('.typed-words', {
+                    strings: ["Web Apps"," WordPress"," Mobile Apps"],
+                    typeSpeed: 80,
+                    backSpeed: 80,
+                    backDelay: 4000,
+                    startDelay: 1000,
+                    loop: true,
+                    showCursor: true
+                    });
+                    </script>
+            -->
+            <script src="../static/chimper/js/main.js"></script>
+        </body></html>
+        

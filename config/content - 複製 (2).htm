@@ -1,6 +1,7 @@
 <h1>簡介</h1>
 <p>CMSimfly (<a href="https://github.com/chiamingyen/cmsimfly">https://github.com/chiamingyen/cmsimfly)</a> 是一套簡單的網際內容管理系統, 採用 Flask 網際框架, 以 Beautifulsoup 解讀分頁內容.</p>
-<p><img alt="" height="471" src="/images/gocycle4.png" width="587"/><img alt="" height="195" src="/images/chrome_KohkLntPbQ.png" width="400"/></p><h1>目錄結構</h1>
+<p><img alt="" height="471" src="/images/gocycle4.png" width="587"/><img alt="" height="195" src="/images/chrome_KohkLntPbQ.png" width="400"/></p>
+<h1>目錄結構</h1>
 <p>CMSimfly 的動態系統採用 Python3 + Flask 建構, 並且利用 Beatifulsoup 解讀位於 contig 目錄中的 content.htm 超文件檔案.</p>
 <p>content.htm 檔案可以透過動態系統中的 generate_pages 功能, 將超文件轉為位於 content 目錄中的個別頁面檔案.</p>
 <p>動態系統與靜態系統則共用 downloads, images, static 等目錄, 其中 downloads 目錄存放在動態系統上傳的文件檔, 而 images 目錄則存放動態系統所上傳的影像檔案, 包括 jpg, png 與 git 等格式圖檔.</p>
@@ -12,7 +13,8 @@
 <h1>插入程式碼</h1>
 <p>CMSimfly 目前使用 Syntaxhighlighter 3.0.83:</p>
 <p> <a href="http://alexgorbatchev.com/SyntaxHighlighter/">http://alexgorbatchev.com/SyntaxHighlighter/</a> </p>
-<p>進行頁面中的程式碼高亮顯示.</p><h3>Java 程式碼</h3>
+<p>進行頁面中的程式碼高亮顯示.</p>
+<h3>Java 程式碼</h3>
 <pre class="brush:java;auto-links:false;toolbar:false" contenteditable="false">import java.util.Scanner;
 
 public class Life {
@@ -92,7 +94,8 @@ public class Life {
     }
 
 }</pre>
-<p></p><h3>Python 程式碼</h3>
+<p></p>
+<h3>Python 程式碼</h3>
 <pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">def parse_content():
     """use bs4 and re module functions to parse content.htm"""
     #from pybean import Store, SQLiteWriter
@@ -174,7 +177,8 @@ public class Life {
     return head_list, level_list, page_list
 
 </pre>
-<p></p><h3>C或C++程式碼</h3>
+<p></p>
+<h3>C或C++程式碼</h3>
 <p>請注意, 目前 CMSimfly 標題內文無法解讀 "/" 符號, 因此若本頁面的標題為  "C/C++程式碼", 則無法進行分頁.</p>
 <pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">/* Runge Kutta for a set of first order differential equations */
  
@@ -270,7 +274,8 @@ double f(double x, double y[], int i){
     x=-y[0]-0.5*y[1];
   return x;
 }</pre>
-<p></p><h3>Lua 程式碼</h3>
+<p></p>
+<h3>Lua 程式碼</h3>
 <pre class="brush:lua;auto-links:false;toolbar:false" contenteditable="false">-- 導入 js 模組
 js = require("js")
 -- 取得 window
@@ -298,7 +303,8 @@ while answer ~= tonumber(guess) do
 end
 print("總共猜了 "..num.." 次, answer=guess="..answer.." - correct")
     </pre>
-<p></p><h3>Javascript 程式碼</h3>
+<p></p>
+<h3>Javascript 程式碼</h3>
 <pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">STLViewer = function(stlpath, plotarea) {
 
 	var mycanvas = document.getElementById(plotarea);
@@ -383,7 +389,8 @@ print("總共猜了 "..num.." 次, answer=guess="..answer.." - correct")
 	}
 }
 </pre>
-<p></p><h3>Html 原始碼</h3>
+<p></p>
+<h3>Html 原始碼</h3>
 <pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">&lt;html&gt;
    &lt;head&gt;
       &lt;meta http-equiv="content-type" content="text/html;charset=utf-8"&gt;
@@ -427,7 +434,8 @@ print("總共猜了 "..num.." 次, answer=guess="..answer.." - correct")
    &lt;/body&gt;
 &lt;/html&gt;
 COPY TO CLIPBOARD	</pre>
-<p></p><h1>網際簡報</h1>
+<p></p>
+<h1>網際簡報</h1>
 <p>CMSimfly 中採用 <a href="https://revealjs.com/#/">Reveal.js</a> 作為網際簡報, 其中的維護檔案位於 config/reveal.js, 而對應的簡報檔案則位於 reveal 目錄中.</p>
 <h1>網誌編輯</h1>
 <p>CMSimfly 彩用 <a href="https://blog.getpelican.com/">Pelican blog</a> 系統, 編輯檔案位於 config/pelican.leo, 對應的</p>
@@ -441,7 +449,8 @@ COPY TO CLIPBOARD	</pre>
 <p>各頁面標題目前不支援特殊符號, 例如: "/", "?" 等, 若已經發生程式無法解讀頁面的情況, 只能從編輯 config/content.htm 下手, 若系統位於遠端, 則後續必須要再設法提供一個額外的編輯 config/content.htm 檔案的網際連結功能.</p>
 <h4>Video 引用不支援內部引用</h4>
 <p>tinymce 中插入 video 的小視窗, 要移除引用的圖像與連結, 因為一般建議不要在內容中存入 .mp4 的影片資料, 而只接受引入影片 URL 連結.</p>
-<p></p><h1>產生亂數</h1>
+<p></p>
+<h1>產生亂數</h1>
 <p><button onclick="myFunction()">按一下</button></p>
 <pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">&lt;p&gt;&lt;button onclick="myFunction()"&gt;按一下&lt;/button&gt;&lt;/p&gt;
 &lt;p id="demo"&gt;&lt;/p&gt;
@@ -451,12 +460,18 @@ function myFunction() {
 }
 // ]]&gt;&lt;/script&gt;</pre>
 <p id="demo"></p>
-<script>// <![CDATA[
+<script>
 function myFunction() {
   document.getElementById("demo").innerHTML = Math.floor(Math.random()*50+1);
 }
-<<<<<<< HEAD
-// ]]></script><h1>期末報告說明</h1>
+</script>
+<h1>期末報告說明</h1>
+<h4>網路連線設定</h4>
+<p><a href="https://50733140.github.io/2019wcmj/content/網路連線設定.html">https://50733140.github.io/2019wcmj/content/網路連線設定.html</a></p>
+<h4>配置可攜程式環境</h4>
+<p><a href="https://50733140.github.io/2019wcmj/content/配置可攜程式環境.html">https://50733140.github.io/2019wcmj/content/配置可攜程式環境.html</a></p>
+<h4>倉儲改版</h4>
+<p><a href="https://50733140.github.io/2019wcmj/content/倉儲改版.html">https://50733140.github.io/2019wcmj/content/倉儲改版.html</a></p>
 <h2>網路連線設定</h2>
 <p><span>了解機械設計系電腦輔助設計室電腦的網路設定, 其中包括 IPv4 網路與 IPv6 網路設定.</span><br/><br/><span>正常情況下, 電腦輔助設計室中的 64 台電腦透過 IPv4 協定下的 DHCP 與 NAT 上網, 各電腦以 DHCP client 取得 192.168.1.* 的網路位址, 然後以 NAT 的一組外部 IP 上網, 通常必須設定 Proxy Server 為 http://proxy.kmol.info:3128 後上網會比較順暢, 但若 8 台 Proxy Servers 無法正常運作時, 則取消 Proxy Server 的設定.</span><br/><br/><span>瀏覽器代理主機設定</span><br/><br/><span>了解如何設定 Google Chrome 與 Firefox 瀏覽器的代理主機設定.</span><br/><br/><span>申請 Github 帳號</span><br/><br/><span>利用 Gmail 帳號申請 Github 帳號, 申請後利用電子郵箱收信進行確認後, 就可以在 Github 上建立倉儲.</span></p>
 <h2>配置可攜程式環境</h2>
@@ -526,10 +541,76 @@ with open(filename, "w", encoding="utf-8") as f:
 <p><span>前端開發者必須讓網頁能在各種大小與規格的瀏覽裝置中, 正確且友善地顯示內容, 而後端開發者, 則專注於讓近端使用者能夠透過網際介面使用各種與機械設計流程相關的 CAD, CAE, CAM, PDM, 以及各種支援用的數位型錄等.</span></p>
 <p>參考 vdi:<br/><br/>位於雲端的<span> </span><a href="https://drive.google.com/file/d/1bSBdEPVn6IG22cVLpTbY97JY16vjlatz/view?usp=sharing">Ubuntu 18.04_201904.vdi</a><span> </span>(約 9 GB) - 已經配置 Fossil SCM: https 5443, Host-only: 192.168.56.2, https: 443 and 8843 for CMSimfly, Squid Proxy Server.<br/><br/>假如要利用 USB 隨身碟存放上述約 9 GB 的 Ubuntu 18.04 vdi 檔案, 必須將隨身碟格式化為 NTFS, 若採 Fat32 格式, 最大單一檔案必須小於 4 GB.<br/><br/>另外在近端有一類似的檔案, 可提供上課學員下載:<br/><br/><a href="http://wcmg1.kmol.info:88/ub1804_nox.vdi">http://wcmg1.kmol.info:88/ub1804_nox.vdi</a><span> </span>(僅限近端用戶使用 IPv6 協定者下載)</p>
 <p>Fossil SCM<br/><br/>如何利用 Fossil SCM, 在 Virtualbox 中的 Ubuntu 18.04-2 (8.5 GB) 建立類似 Github 的系統, 可以放入 CMSimfly 的靜態網頁<br/><br/>Ubuntu 18.04 (https://www.ubuntu.com/about/release-cycle), 配置網路連線, 然後架構 uwsgi 環境下的 CMSimfly 動態網站, 或建立 Fossil SCM 用來伺服管理 CMSimfly 下有版次管理的靜態網頁, 或利用 nginx 伺服無版次管理的 CMSimfly 靜態網頁.</p>
-=======
-// ]]&gt;
-<p></p><h1>期中自評影片</h1>
+<p>======= // ]]&gt;</p>
+<p></p>
+<h1>期中自評影片</h1>
 <p><iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen" frameborder="0" height="693" src="https://www.youtube.com/embed/4eP0k16gGIs" width="1280"></iframe></p>
-<h1>game1</h1>
+<h1>捕魚達人</h1>
 <p><a href="https://50733140.github.io/2019wcmj/content/game.html">https://50733140.github.io/2019wcmj/content/game.html</a></p>
 <p></p>
+<h1>ROC flag</h1>
+<!-- 導入 Brython 標準程式庫 -->
+<script src="/static/brython.js"></script>
+<script src="/static/brython_stdlib.js"></script>
+<p></p>
+<!-- 啟動 Brython -->
+<script>
+window.onload=function(){
+// 設定 data/py 為共用程式路徑
+brython({debug:1, pythonpath:['./../data/py']});
+}
+</script>
+<p><canvas height="400" id="plotarea" width="600"></canvas></p>
+<script type="text/python">
+# 導入 doc
+from browser import document as doc
+import math
+
+# 準備繪圖畫布
+canvas = doc["plotarea"]
+ctx = canvas.getContext("2d")
+# 進行座標轉換, x 軸不變, y 軸反向且移動 canvas.height 單位光點
+# ctx.setTransform(1, 0, 0, -1, 0, canvas.height)
+# 以下採用 canvas 原始座標繪圖
+flag_w = canvas.width
+flag_h = canvas.height
+circle_x = flag_w/4
+circle_y = flag_h/4
+# 先畫滿地紅
+ctx.fillStyle='rgb(255, 0, 0)'
+ctx.fillRect(0,0,flag_w,flag_h)
+# 再畫青天
+ctx.fillStyle='rgb(0, 0, 150)'
+ctx.fillRect(0,0,flag_w/2,flag_h/2)
+# 畫十二道光芒白日
+ctx.beginPath()
+star_radius = flag_w/8
+angle = 0
+for i in range(24):
+    angle += 5*math.pi*2/12
+    toX = circle_x + math.cos(angle)*star_radius
+    toY = circle_y + math.sin(angle)*star_radius
+    # 只有 i 為 0 時移動到 toX, toY, 其餘都進行 lineTo
+    if (i):
+        ctx.lineTo(toX, toY)
+    else:
+        ctx.moveTo(toX, toY)
+ctx.closePath()
+# 將填色設為白色
+ctx.fillStyle = '#fff'
+ctx.fill()
+# 白日:藍圈
+ctx.beginPath()
+ctx.arc(circle_x, circle_y, flag_w*17/240, 0, math.pi*2, True)
+ctx.closePath()
+# 填色設為藍色
+ctx.fillStyle = 'rgb(0, 0, 149)'
+ctx.fill()
+# 白日:白心
+ctx.beginPath()
+ctx.arc(circle_x, circle_y, flag_w/16, 0, math.pi*2, True)
+ctx.closePath()
+# 填色設為白色
+ctx.fillStyle = '#fff'
+ctx.fill()
+</script>
