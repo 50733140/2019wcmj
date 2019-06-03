@@ -546,14 +546,16 @@ with open(filename, "w", encoding="utf-8") as f:
 <h1>期中自評影片</h1>
 <p><iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen" frameborder="0" height="693" src="https://www.youtube.com/embed/4eP0k16gGIs" width="1280"></iframe></p>
 <h1>捕魚達人</h1>
-<p><a href="https://50733140.github.io/fishjoy/index.html">https://50733140.github.io/fishjoy/index.html</a></p><h1>校園授權軟體</h1>
+<p><a href="https://50733140.github.io/fishjoy/index.html">https://50733140.github.io/fishjoy/index.html</a></p>
+<h1>校園授權軟體</h1>
 <h4>搜尋 虎尾科技大學 計算機中心</h4>
 <p><img alt="" height="1040" src="/images/chrome_pSbWKEKLEC.png" width="1920"/></p>
 <h4>進入校園授權軟體下載專區(限校內IP)</h4>
 <p><img alt="" height="888" src="/images/chrome_QuevLHAcV8.png" width="1920"/></p>
 <h2>Windows</h2>
 <p>登入帳號密碼後 選取 Microsoft</p>
-<p><img alt="" height="694" src="/images/chrome_be6xOLmqun.png" width="1500"/>選擇你要的windows系統 (中文版 英語版  Windows8.1 Windows10 64bit or 32bit<img alt="" height="694" src="/images/chrome_YHe1afiVNk.png" width="1500"/></p><h2>設定校外VPN</h2>
+<p><img alt="" height="694" src="/images/chrome_be6xOLmqun.png" width="1500"/>選擇你要的windows系統 (中文版 英語版  Windows8.1 Windows10 64bit or 32bit<img alt="" height="694" src="/images/chrome_YHe1afiVNk.png" width="1500"/></p>
+<h2>設定校外VPN</h2>
 <p>如果人在校外 卻想使用Windows或者其他應用程式的授權</p>
 <p>需使用VPN來掛載在學校IP上</p>
 <p>1.下載<strong>SSL VPN 程式(Juniper Networks Connect)</strong></p>
@@ -562,7 +564,8 @@ with open(filename, "w", encoding="utf-8") as f:
 <p>3.<span>輸入使用者帳號密碼，請填入校務行政AD帳號及密碼。請完整填寫您在校務行政AD帳號以及密碼，否則國網中心找不到對象進行身份確認 </span><br/><span>！(例: 員工編號或學號@ctx10.nfu.edu.tw）<img alt="" height="628" src="/images/2.png" width="691"/></span></p>
 <h1>Ubuntu</h1>
 <p>Ubuntu是以桌面應用為主的Linux發行版</p>
-<p>Ubuntu由Canonical公司發布，他們提供商業支援。它是基於自由軟體</p><h2>Ubuntu VirtualBox前置設定</h2>
+<p>Ubuntu由Canonical公司發布，他們提供商業支援。它是基於自由軟體</p>
+<h2>Ubuntu VirtualBox前置設定</h2>
 <p>1.下載好Ubuntu的映像檔(.iso) 有desktop版 server版....等</p>
 <p><img alt="" height="370" src="/images/chrome_UWSV9VJgBS.png" width="800"/></p>
 <p></p>
@@ -579,7 +582,9 @@ with open(filename, "w", encoding="utf-8") as f:
 <p>6.這邊選取動態配置 硬碟大小會慢慢增加 不會一次占用到最大設定大小 可是也不會超過最大配置</p>
 <p><img alt="" height="420" src="/images/VirtualBox_3lIPVFmfDT.png" width="385"/></p>
 <p>7.這邊配置虛擬硬碟最大容量 500GB</p>
-<p><img alt="" height="420" src="/images/VirtualBox_Ns47LYHM7b.png" width="385"/></p><h1>ROC flag.</h1>
+<p><img alt="" height="420" src="/images/VirtualBox_Ns47LYHM7b.png" width="385"/></p>
+<p>8.之後就設定好虛擬主機了</p>
+<p><img alt="" height="734" src="/images/VirtualBox_Eh6BHsZuiB.png" width="1282"/></p><h1>ROC flag</h1>
 <!-- 導入 Brython 標準程式庫 -->
 <script src="/static/brython.js"></script>
 <script src="/static/brython_stdlib.js"></script>
@@ -645,3 +650,57 @@ ctx.closePath()
 ctx.fillStyle = '#fff'
 ctx.fill()
 </script>
+<p><canvas height="400" id="plotarea" width="600"></canvas></p>
+<script type="text/python">
+# 導入 doc
+from browser import document as doc
+import math
+
+# 準備繪圖畫布
+canvas = doc["plotarea"]
+ctx = canvas.getContext("2d")
+# 進行座標轉換, x 軸不變, y 軸反向且移動 canvas.height 單位光點
+# ctx.setTransform(1, 0, 0, -1, 0, canvas.height)
+# 以下採用 canvas 原始座標繪圖
+flag_w = canvas.width
+flag_h = canvas.height
+circle_x = flag_w/4
+circle_y = flag_h/4
+# 先畫滿地紅
+ctx.fillStyle='rgb(255, 0, 0)'
+ctx.fillRect(0,0,flag_w,flag_h)
+# 再畫青天
+ctx.fillStyle='rgb(0, 0, 150)'
+ctx.fillRect(0,0,flag_w/2,flag_h/2)
+# 畫十二道光芒白日
+ctx.beginPath()
+star_radius = flag_w/8
+angle = 0
+for i in range(24):
+    angle += 5*math.pi*2/12
+    toX = circle_x + math.cos(angle)*star_radius
+    toY = circle_y + math.sin(angle)*star_radius
+    # 只有 i 為 0 時移動到 toX, toY, 其餘都進行 lineTo
+    if (i):
+        ctx.lineTo(toX, toY)
+    else:
+        ctx.moveTo(toX, toY)
+ctx.closePath()
+# 將填色設為白色
+ctx.fillStyle = '#fff'
+ctx.fill()
+# 白日:藍圈
+ctx.beginPath()
+ctx.arc(circle_x, circle_y, flag_w*17/240, 0, math.pi*2, True)
+ctx.closePath()
+# 填色設為藍色
+ctx.fillStyle = 'rgb(0, 0, 149)'
+ctx.fill()
+# 白日:白心
+ctx.beginPath()
+ctx.arc(circle_x, circle_y, flag_w/16, 0, math.pi*2, True)
+ctx.closePath()
+# 填色設為白色
+ctx.fillStyle = '#fff'
+ctx.fill()
+</script><h1>期末自評影片</h1>
