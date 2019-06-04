@@ -598,7 +598,7 @@ brython({debug:1, pythonpath:['./../data/py']});
 # 導入 doc
 from browser import document as doc
 import math
-
+ 
 # 準備繪圖畫布
 canvas = doc["plotarea"]
 ctx = canvas.getContext("2d")
@@ -647,29 +647,38 @@ ctx.closePath()
 ctx.fillStyle = '#fff'
 ctx.fill()
 </script>
+<script src="/../static/brython.js"></script>
+<script src="/../static/brython_stdlib.js"></script>
 <p></p>
-<p><canvas height="400" id="plotarea2" width="600"></canvas></p>
+<!-- 啟動 Brython -->
+<script>
+window.onload=function(){
+// 設定 data/py 為共用程式路徑
+brython({debug:1, pythonpath:['./../data/py']});
+}
+</script>
+<p><canvas height="400" id="plotarea" width="600"></canvas></p>
 <script type="text/python">
 # 導入 doc
 from browser import document as doc
 import math
-
+ 
 # 準備繪圖畫布
-canvas = doc["plotarea2"]
+canvas = doc["plotarea"]
 ctx = canvas.getContext("2d")
 # 進行座標轉換, x 軸不變, y 軸反向且移動 canvas.height 單位光點
 # ctx.setTransform(1, 0, 0, -1, 0, canvas.height)
 # 以下採用 canvas 原始座標繪圖
 flag_w = canvas.width
 flag_h = canvas.height
-circle_x = flag_w/2
-circle_y = flag_h/2
+circle_x = flag_w/4
+circle_y = flag_h/4
 # 先畫滿地紅
 ctx.fillStyle='rgb(255, 0, 0)'
-ctx.fillRect(300,0,flag_w,flag_h)
+ctx.fillRect(0,0,flag_w,flag_h)
 # 再畫青天
 ctx.fillStyle='rgb(0, 0, 150)'
-ctx.fillRect(0,0,flag_w/2,flag_h)
+ctx.fillRect(0,0,flag_w/2,flag_h/2)
 # 畫十二道光芒白日
 ctx.beginPath()
 star_radius = flag_w/8
@@ -701,8 +710,7 @@ ctx.closePath()
 # 填色設為白色
 ctx.fillStyle = '#fff'
 ctx.fill()
-</script>
-<h1>期末自評影片</h1>
+</script><h1>期末自評影片</h1>
 <h1>期末報告說明</h1>
 <h4>網路連線設定</h4>
 <p><a href="https://50733140.github.io/2019wcmj/content/網路連線設定.html">https://50733140.github.io/2019wcmj/content/網路連線設定.html</a></p>
