@@ -487,7 +487,8 @@ function myFunction() {
 <p>4.之後就可以輸入git push將更新推到github倉儲</p>
 <p><img alt="" height="544" src="/images/cmd_fB5tbmH5XZ.png" width="979"/></p>
 <p></p>
-<p></p><h1>校園授權軟體</h1>
+<p></p>
+<h1>校園授權軟體</h1>
 <h4>搜尋 虎尾科技大學 計算機中心</h4>
 <p><img alt="" height="1040" src="/images/chrome_pSbWKEKLEC.png" width="1920"/></p>
 <h4>進入校園授權軟體下載專區(限校內IP)</h4>
@@ -506,7 +507,8 @@ function myFunction() {
 <h4>Windows 是微軟公司推出的一系列作業系統。其問世時間為1985年，起初為運行於MS-DOS之下的桌面環境 <span>此作業系統可以在幾種不同類型的平台上執行，如個人電腦（PC）、移動裝置、伺服器（Server）和嵌入式系統等等，其中在個人電腦的領域套用內最為普遍。</span></h4>
 <p><span><img alt="" height="563" src="/images/WINDOWS-10-wallpaper.jpg" width="1000"/></span></p>
 <h5>Ubuntu<span>是以桌面應用為主的Linux發行版，Ubuntu由Canonical公司發布。Ubuntu是著名的Linux發行版之一，它也是目前最多使用者的Linux版本，用戶數超過10億人(含伺服器、手機與其分支版本)</span></h5>
-<p><span><img alt="" height="223" src="/images/images.jpg" width="226"/></span></p><h2>安裝Windows</h2>
+<p><span><img alt="" height="223" src="/images/images.jpg" width="226"/></span></p>
+<h2>安裝Windows</h2>
 <p>1.設定完虛擬機後 打開選取Windows 10的iso檔</p>
 <p>2.選擇你要的語言</p>
 <p><img alt="" height="842" src="/images/VirtualBoxVM_4ASiVpcvg7.png" width="1026"/></p>
@@ -583,13 +585,13 @@ function myFunction() {
 <p><img alt="" height="734" src="/images/VirtualBox_Eh6BHsZuiB.png" width="1282"/></p>
 <h1>ROC flag</h1>
 <!-- 導入 Brython 標準程式庫 -->
-<script src="/../static/brython.js"></script>
-<script src="/../static/brython_stdlib.js"></script>
+<script src="/get_page/brython.js"></script>
+<script src="/get_page/brython_stdlib.js"></script>
 <p></p>
 <!-- 啟動 Brython -->
 <script>
 window.onload=function(){
-// 設定 data/py 為共用程式路徑
+
 brython({debug:1, pythonpath:['./../data/py']});
 }
 </script>
@@ -598,24 +600,24 @@ brython({debug:1, pythonpath:['./../data/py']});
 # 導入 doc
 from browser import document as doc
 import math
- 
-# 準備繪圖畫布
+
+
 canvas = doc["plotarea"]
 ctx = canvas.getContext("2d")
-# 進行座標轉換, x 軸不變, y 軸反向且移動 canvas.height 單位光點
+
 # ctx.setTransform(1, 0, 0, -1, 0, canvas.height)
-# 以下採用 canvas 原始座標繪圖
+
 flag_w = canvas.width
 flag_h = canvas.height
 circle_x = flag_w/4
 circle_y = flag_h/4
-# 先畫滿地紅
+
 ctx.fillStyle='rgb(255, 0, 0)'
 ctx.fillRect(0,0,flag_w,flag_h)
-# 再畫青天
+
 ctx.fillStyle='rgb(0, 0, 150)'
 ctx.fillRect(0,0,flag_w/2,flag_h/2)
-# 畫十二道光芒白日
+
 ctx.beginPath()
 star_radius = flag_w/8
 angle = 0
@@ -623,62 +625,53 @@ for i in range(24):
     angle += 5*math.pi*2/12
     toX = circle_x + math.cos(angle)*star_radius
     toY = circle_y + math.sin(angle)*star_radius
-    # 只有 i 為 0 時移動到 toX, toY, 其餘都進行 lineTo
+   
     if (i):
         ctx.lineTo(toX, toY)
     else:
         ctx.moveTo(toX, toY)
 ctx.closePath()
-# 將填色設為白色
+
 ctx.fillStyle = '#fff'
 ctx.fill()
-# 白日:藍圈
+
 ctx.beginPath()
 ctx.arc(circle_x, circle_y, flag_w*17/240, 0, math.pi*2, True)
 ctx.closePath()
-# 填色設為藍色
+
 ctx.fillStyle = 'rgb(0, 0, 149)'
 ctx.fill()
-# 白日:白心
+
 ctx.beginPath()
 ctx.arc(circle_x, circle_y, flag_w/16, 0, math.pi*2, True)
 ctx.closePath()
-# 填色設為白色
+
 ctx.fillStyle = '#fff'
 ctx.fill()
 </script>
-<script src="/../static/brython.js"></script>
-<script src="/../static/brython_stdlib.js"></script>
 <p></p>
-<!-- 啟動 Brython -->
-<script>
-window.onload=function(){
-// 設定 data/py 為共用程式路徑
-brython({debug:1, pythonpath:['./../data/py']});
-}
-</script>
-<p><canvas height="400" id="plotarea" width="600"></canvas></p>
+<p><canvas height="400" id="plotarea2" width="600"></canvas></p>
 <script type="text/python">
 # 導入 doc
 from browser import document as doc
 import math
- 
+
 # 準備繪圖畫布
-canvas = doc["plotarea"]
+canvas = doc["plotarea2"]
 ctx = canvas.getContext("2d")
 # 進行座標轉換, x 軸不變, y 軸反向且移動 canvas.height 單位光點
 # ctx.setTransform(1, 0, 0, -1, 0, canvas.height)
 # 以下採用 canvas 原始座標繪圖
 flag_w = canvas.width
 flag_h = canvas.height
-circle_x = flag_w/4
-circle_y = flag_h/4
+circle_x = flag_w/2
+circle_y = flag_h/2
 # 先畫滿地紅
 ctx.fillStyle='rgb(255, 0, 0)'
-ctx.fillRect(0,0,flag_w,flag_h)
+ctx.fillRect(300,0,flag_w,flag_h)
 # 再畫青天
 ctx.fillStyle='rgb(0, 0, 150)'
-ctx.fillRect(0,0,flag_w/2,flag_h/2)
+ctx.fillRect(0,0,flag_w/2,flag_h)
 # 畫十二道光芒白日
 ctx.beginPath()
 star_radius = flag_w/8
